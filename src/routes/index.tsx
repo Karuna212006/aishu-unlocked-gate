@@ -1,24 +1,68 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { PinGate } from "@/components/sections/PinGate";
+import { Hero } from "@/components/sections/Hero";
+import { PhotoWallSection } from "@/components/sections/PhotoWallSection";
+import { SongSection } from "@/components/sections/SongSection";
+import { GallerySection } from "@/components/sections/GallerySection";
+import { CakeSection } from "@/components/sections/CakeSection";
+import { LetterSection } from "@/components/sections/LetterSection";
+import { WorldCards } from "@/components/sections/WorldCards";
+import { WishSection } from "@/components/sections/WishSection";
+import { ClosingSection } from "@/components/sections/ClosingSection";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  ssr: false,
+  head: () => ({
+    meta: [
+      { title: "For Aishu — A Birthday Access Pass" },
+      {
+        name: "description",
+        content:
+          "A fantasy 3D birthday card for Aishu: six glowing fandom worlds, a cake to cut, a candle to blow out, and a letter.",
+      },
+      { property: "og:title", content: "For Aishu — A Birthday Access Pass" },
+      {
+        property: "og:description",
+        content: "Enter the PIN and step through the gate into six little worlds.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: BirthdayCard,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function BirthdayCard() {
+  const [unlocked, setUnlocked] = useState(false);
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main id="top" className="relative min-h-screen bg-background">
+      <AnimatePresence mode="wait">
+        {!unlocked ? (
+          <motion.div key="gate" exit={{ opacity: 0 }}>
+            <PinGate onUnlock={() => setUnlocked(true)} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="card"
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <Hero />
+            <PhotoWallSection />
+            <SongSection />
+            <GallerySection />
+            <CakeSection />
+            <LetterSection />
+            <WorldCards />
+            <WishSection />
+            <ClosingSection />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </main>
   );
 }
