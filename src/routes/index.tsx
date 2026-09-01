@@ -13,7 +13,6 @@ import { WishSection } from "@/components/sections/WishSection";
 import { ClosingSection } from "@/components/sections/ClosingSection";
 
 export const Route = createFileRoute("/")({
-  ssr: false,
   head: () => ({
     meta: [
       { title: "For Aishu — A Birthday Access Pass" },
