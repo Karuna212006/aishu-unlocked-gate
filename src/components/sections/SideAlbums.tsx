@@ -53,11 +53,10 @@ function Column({
           className="w-full rounded-[3px] bg-[#f6f1e6] p-2 pb-5 shadow-[0_18px_50px_-18px_rgba(0,0,0,0.9)]"
           style={
             drift
-              ? {
-                  animation: `float-soft ${9 + (i % 3) * 2}s ease-in-out ${i * 0.7}s infinite`,
-                }
-              : undefined
+              ? { animation: `float-soft ${9 + (i % 3) * 2}s ease-in-out ${i * 0.7}s infinite` }
+              : {}
           }
+
         >
           <img
             src={item.src}
