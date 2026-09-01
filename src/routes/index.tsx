@@ -57,16 +57,17 @@ function BirthdayCard() {
             <SideAlbums />
             <div className="relative z-10">
               <Hero />
-
-            <PhotoWallSection />
-            <SongSection />
-            <GallerySection />
-            <CakeSection />
-            <LetterSection />
-            <WorldCards />
-            <WishSection />
-            <ClosingSection />
+              <PhotoWallSection />
+              <SongSection />
+              <GallerySection />
+              <CakeSection />
+              <LetterSection />
+              <WorldCards />
+              <WishSection />
+              <ClosingSection />
+            </div>
           </motion.div>
+
         )}
       </AnimatePresence>
     </main>
