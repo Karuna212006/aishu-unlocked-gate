@@ -13,7 +13,7 @@ export function Vinyl({ drift = true }: { drift?: boolean }) {
     if (drift && disc.current) disc.current.rotation.z -= delta * 1.1;
     if (bars.current) {
       bars.current.children.forEach((child, i) => {
-        const s = drift ? 0.5 + Math.abs(Math.sin(state.clock.elapsedTime * 2 + seeds[i])) * 1.4 : 1;
+        const s = drift ? 0.5 + Math.abs(Math.sin(state.clock.elapsedTime * 2 + seeds[i]!)) * 1.4 : 1;
         child.scale.y = THREE.MathUtils.damp(child.scale.y, s, 6, delta);
       });
     }
