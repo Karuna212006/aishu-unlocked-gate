@@ -4,7 +4,13 @@ import * as THREE from "three";
 
 const CONFETTI_COLORS = ["#7CE7C4", "#FF6B5E", "#8FB8FF", "#F58BD8", "#FFC46B", "#C79BFF"];
 
-export function Confetti({ active, origin = [0, 0, 0] as [number, number, number] }) {
+export function Confetti({
+  active,
+  origin = [0, 0, 0] as [number, number, number],
+}: {
+  active: boolean;
+  origin?: [number, number, number];
+}) {
   const ref = useRef<THREE.Points>(null);
   const count = 260;
   const { positions, colors, velocities } = useMemo(() => {
@@ -26,7 +32,7 @@ export function Confetti({ active, origin = [0, 0, 0] as [number, number, number
     const delta = Math.min(rawDelta, 0.05);
     if (!ref.current) return;
     const geo = ref.current.geometry;
-    const pos = geo.attributes.position as THREE.BufferAttribute;
+    const pos = geo.attributes['position'] as THREE.BufferAttribute;
     if (active && !started.current) {
       started.current = true;
       for (let i = 0; i < count; i++) {
@@ -43,10 +49,10 @@ export function Confetti({ active, origin = [0, 0, 0] as [number, number, number
     }
     if (!started.current) return;
     for (let i = 0; i < count; i++) {
-      velocities[i * 3 + 1]! -= 6 * delta;
-      pos.array[i * 3] += velocities[i * 3]! * delta;
-      pos.array[i * 3 + 1] += velocities[i * 3 + 1]! * delta;
-      pos.array[i * 3 + 2] += velocities[i * 3 + 2]! * delta;
+      velocities[i * 3 + 1] = velocities[i * 3 + 1]! - 6 * delta;
+      pos.array[i * 3] = pos.array[i * 3]! + velocities[i * 3]! * delta;
+      pos.array[i * 3 + 1] = pos.array[i * 3 + 1]! + velocities[i * 3 + 1]! * delta;
+      pos.array[i * 3 + 2] = pos.array[i * 3 + 2]! + velocities[i * 3 + 2]! * delta;
     }
     pos.needsUpdate = true;
     ref.current.visible = true;
@@ -130,7 +136,7 @@ export function Cake({ cut, drift }: { cut: boolean; drift: boolean }) {
         <group key={i} position={[x, 1.0, i === 1 ? 0.35 : -0.2]}>
           <mesh>
             <cylinderGeometry args={[0.06, 0.06, 0.5, 8]} />
-            <meshStandardMaterial color={["#7ce7c4", "#f58bd8", "#8fb8ff"][i]} />
+            <meshStandardMaterial color={["#7ce7c4", "#f58bd8", "#8fb8ff"][i] ?? "#f58bd8"} />
           </mesh>
           <Flame lit={!cut} position={[0, 0.36, 0]} />
         </group>

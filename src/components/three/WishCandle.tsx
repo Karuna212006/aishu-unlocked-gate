@@ -33,12 +33,12 @@ export function WishCandle({ blown, drift }: { blown: boolean; drift: boolean })
     if (!stars.current) return;
     stars.current.visible = blown;
     if (!blown) return;
-    const pos = stars.current.geometry.attributes.position as THREE.BufferAttribute;
+    const pos = stars.current.geometry.attributes['position'] as THREE.BufferAttribute;
     for (let i = 0; i < count; i++) {
       const s = seeds[i]!;
-      pos.array[i * 3] += s.x * delta * 0.6;
-      pos.array[i * 3 + 1] += s.y * delta * 0.5;
-      pos.array[i * 3 + 2] += s.z * delta * 0.6;
+      pos.array[i * 3] = pos.array[i * 3]! + s.x * delta * 0.6;
+      pos.array[i * 3 + 1] = pos.array[i * 3 + 1]! + s.y * delta * 0.5;
+      pos.array[i * 3 + 2] = pos.array[i * 3 + 2]! + s.z * delta * 0.6;
     }
     pos.needsUpdate = true;
     if (drift) stars.current.rotation.y = state.clock.elapsedTime * 0.15;
