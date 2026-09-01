@@ -11,6 +11,8 @@ import { LetterSection } from "@/components/sections/LetterSection";
 import { WorldCards } from "@/components/sections/WorldCards";
 import { WishSection } from "@/components/sections/WishSection";
 import { ClosingSection } from "@/components/sections/ClosingSection";
+import { SideAlbums } from "@/components/sections/SideAlbums";
+
 
 export const Route = createFileRoute("/")({
   ssr: false,
