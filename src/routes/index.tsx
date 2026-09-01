@@ -11,6 +11,8 @@ import { LetterSection } from "@/components/sections/LetterSection";
 import { WorldCards } from "@/components/sections/WorldCards";
 import { WishSection } from "@/components/sections/WishSection";
 import { ClosingSection } from "@/components/sections/ClosingSection";
+import { SideAlbums } from "@/components/sections/SideAlbums";
+
 
 export const Route = createFileRoute("/")({
   ssr: false,
@@ -50,17 +52,22 @@ function BirthdayCard() {
             initial={{ opacity: 0, scale: 1.04 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
+            className="relative"
           >
-            <Hero />
-            <PhotoWallSection />
-            <SongSection />
-            <GallerySection />
-            <CakeSection />
-            <LetterSection />
-            <WorldCards />
-            <WishSection />
-            <ClosingSection />
+            <SideAlbums />
+            <div className="relative z-10">
+              <Hero />
+              <PhotoWallSection />
+              <SongSection />
+              <GallerySection />
+              <CakeSection />
+              <LetterSection />
+              <WorldCards />
+              <WishSection />
+              <ClosingSection />
+            </div>
           </motion.div>
+
         )}
       </AnimatePresence>
     </main>
