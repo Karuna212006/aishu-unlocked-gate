@@ -52,8 +52,12 @@ function BirthdayCard() {
             initial={{ opacity: 0, scale: 1.04 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
+            className="relative"
           >
-            <Hero />
+            <SideAlbums />
+            <div className="relative z-10">
+              <Hero />
+
             <PhotoWallSection />
             <SongSection />
             <GallerySection />
