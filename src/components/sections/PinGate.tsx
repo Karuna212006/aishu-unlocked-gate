@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { SceneCanvas } from "@/components/three/SceneCanvas";
-import { PortalGate } from "@/components/three/PortalGate";
-import { useReducedMotion } from "@/lib/reduced-motion";
+/** EDITABLE: swap this for whichever person photo you want behind the gate. */
+import personImage from "@/assets/sasha.jpg.asset.json";
 
 /** EDITABLE: the unlock PIN. */
 const PIN = "0704";
 
 export function PinGate({ onUnlock }: { onUnlock: () => void }) {
-  const reduced = useReducedMotion();
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
   const [opening, setOpening] = useState(false);
@@ -33,9 +31,19 @@ export function PinGate({ onUnlock }: { onUnlock: () => void }) {
 
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden nebula-bg">
-      <SceneCanvas camera={{ position: [0, 0, 7.5], fov: 55 }}>
-        <PortalGate open={opening} drift={!reduced} />
-      </SceneCanvas>
+      <motion.div
+        animate={opening ? { scale: 1.1, opacity: 0.15 } : { scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="absolute inset-0"
+      >
+        <img
+          src={personImage.url}
+          alt="A portrait of Aishu behind the birthday gate"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_45%,transparent,var(--background))]" />
+      </motion.div>
 
       <motion.div
         animate={opening ? { opacity: 0, scale: 1.15 } : { opacity: 1, scale: 1 }}
