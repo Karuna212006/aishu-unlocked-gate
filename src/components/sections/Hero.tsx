@@ -36,7 +36,7 @@ export function Hero() {
           transition={{ delay: 0.8 }}
           className="mx-auto mt-6 max-w-md font-body text-sm text-muted-foreground sm:text-base"
         >
-          Your access pass to six little worlds — built entirely out of the things you love.
+          {"\n"}
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}
@@ -50,7 +50,7 @@ export function Hero() {
               className="rounded-full border border-border px-3 py-1 font-body text-xs text-foreground/80 backdrop-blur-sm"
               style={{ boxShadow: `0 0 18px -8px ${w.color}` }}
             >
-              {w.emoji} {w.label}
+              {"\n"}
             </span>
           ))}
         </motion.div>
