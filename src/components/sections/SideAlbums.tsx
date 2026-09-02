@@ -39,15 +39,16 @@ function Column({
 }) {
   return (
     <div
-      className={`pointer-events-none absolute top-0 hidden h-full w-[190px] flex-col items-center gap-24 pt-[30vh] lg:flex xl:w-[230px] ${
-        side === "left" ? "left-2 xl:left-6" : "right-2 xl:right-6"
+      className={`pointer-events-none absolute top-0 hidden h-full w-[170px] flex-col items-center gap-20 pt-[24vh] md:flex lg:w-[200px] xl:w-[230px] ${
+        side === "left" ? "left-1 xl:left-6" : "right-1 xl:right-6"
       }`}
     >
       {items.map((item, i) => (
         <motion.figure
           key={item.src}
           initial={{ opacity: 0, y: 40, rotate: item.tilt }}
-          whileInView={{ opacity: 0.55, y: 0, rotate: item.tilt }}
+          whileInView={{ opacity: 0.75, y: 0, rotate: item.tilt }}
+
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
           className="w-full rounded-[3px] bg-[#f6f1e6] p-2 pb-5 shadow-[0_18px_50px_-18px_rgba(0,0,0,0.9)]"
