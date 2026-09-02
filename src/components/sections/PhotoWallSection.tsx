@@ -36,9 +36,3 @@ export function PhotoWallSection() {
     </section>
   );
 }
-
-        (placeholder frames — real photos go here)
-      </p>
-    </section>
-  );
-}
