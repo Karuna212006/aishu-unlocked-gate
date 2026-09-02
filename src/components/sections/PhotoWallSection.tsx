@@ -33,7 +33,10 @@ export function PhotoWallSection() {
           <PhotoWall3D items={PHOTOS} drift={!reduced} />
         </SceneCanvas>
       </div>
-      <p className="mt-4 text-center font-body text-xs text-muted-foreground">
+    </section>
+  );
+}
+
         (placeholder frames — real photos go here)
       </p>
     </section>
