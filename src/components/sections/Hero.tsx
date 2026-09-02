@@ -1,15 +1,21 @@
 import { motion } from "framer-motion";
-import { SceneCanvas } from "@/components/three/SceneCanvas";
-import { PortalGate } from "@/components/three/PortalGate";
-import { WORLDS, useReducedMotion } from "@/lib/reduced-motion";
+/** EDITABLE: hero background photo. */
+import heroImage from "@/assets/jimin.jpg.asset.json";
+import { WORLDS } from "@/lib/reduced-motion";
 
 export function Hero() {
-  const reduced = useReducedMotion();
   return (
     <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden nebula-bg">
-      <SceneCanvas camera={{ position: [0, 0, 9], fov: 55 }}>
-        <PortalGate open drift={!reduced} />
-      </SceneCanvas>
+      <div className="absolute inset-0">
+        <img
+          src={heroImage.url}
+          alt="Birthday hero portrait"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_45%,transparent,var(--background))]" />
+      </div>
+
 
       <div className="relative z-10 px-6 text-center">
         <motion.p
