@@ -22,7 +22,14 @@ export function SceneCanvas({
     const el = host.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([entry]) => setVisible(Boolean(entry?.isIntersecting)),
+      ([entry]) => {
+        // Mount once and keep it mounted: tearing down a Canvas that hosts
+        // drei <Html> portals races with React's DOM removal (removeChild error).
+        if (entry?.isIntersecting) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
       { rootMargin: "200px" },
     );
     io.observe(el);
