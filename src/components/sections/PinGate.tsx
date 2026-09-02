@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { SceneCanvas } from "@/components/three/SceneCanvas";
-import { PortalGate } from "@/components/three/PortalGate";
-import { useReducedMotion } from "@/lib/reduced-motion";
+/** EDITABLE: swap this for whichever person photo you want behind the gate. */
+import personImage from "@/assets/sasha.jpg.asset.json";
 
 /** EDITABLE: the unlock PIN. */
 const PIN = "0704";
 
 export function PinGate({ onUnlock }: { onUnlock: () => void }) {
-  const reduced = useReducedMotion();
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
   const [opening, setOpening] = useState(false);
