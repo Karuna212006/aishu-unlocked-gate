@@ -43,7 +43,8 @@ function CardPage() {
         className="relative"
       >
         <SideAlbums />
-        <div className="relative z-10">
+        <div className="relative z-10 md:px-[190px] lg:px-[220px] xl:px-[270px]">
+
           <Hero />
           <PhotoWallSection />
           <SongSection />
