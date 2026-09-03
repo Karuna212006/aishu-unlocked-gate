@@ -1,33 +1,33 @@
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/lib/reduced-motion";
 
-import bmwBike from "@/assets/bmw_s1000rr_couples.jpg.asset.json";
-import bmwCouple from "@/assets/bmw_couples.jpg.asset.json";
-import yamal1 from "@/assets/yamal_brother_1.jpg.asset.json";
-import yamal from "@/assets/yamal_brother.jpg.asset.json";
-import messi from "@/assets/messi.jpg.asset.json";
-import levi from "@/assets/levi.jpg.asset.json";
-import sasha1 from "@/assets/sasha1.jpg.asset.json";
-import sasha from "@/assets/sasha.jpg.asset.json";
-import lewisNeymar from "@/assets/lewis_x_neymar.jpg.asset.json";
-import lewis from "@/assets/lewis.jpg.asset.json";
+import bmwBike from "@/assets/bmw_s1000rr_couples.jpg";
+import bmwCouple from "@/assets/bmw_couples.jpg";
+import yamal1 from "@/assets/yamal_brother_1.jpg";
+import yamal from "@/assets/yamal_brother.jpg";
+import messi from "@/assets/messi.jpg";
+import levi from "@/assets/levi.jpg";
+import sasha1 from "@/assets/sasha1.jpg";
+import sasha from "@/assets/sasha.jpg";
+import lewisNeymar from "@/assets/lewis_x_neymar.jpg";
+import lewis from "@/assets/lewis.jpg";
 
 const LEFT = [
   { src: "/bts_formal.jpg", caption: "BTS — suited & stunning", tilt: -5 },
-  { src: messi.url, caption: "the goat", tilt: -6 },
-  { src: levi.url, caption: "clean freak", tilt: 5 },
-  { src: bmwCouple.url, caption: "someday, this drive", tilt: -4 },
-  { src: sasha.url, caption: "potato girl", tilt: 7 },
-  { src: yamal.url, caption: "vamos", tilt: -5 },
+  { src: messi, caption: "the goat", tilt: -6 },
+  { src: levi, caption: "clean freak", tilt: 5 },
+  { src: bmwCouple, caption: "someday, this drive", tilt: -4 },
+  { src: sasha, caption: "potato girl", tilt: 7 },
+  { src: yamal, caption: "vamos", tilt: -5 },
 ];
 
 const RIGHT = [
   { src: "/bts_dark.jpg", caption: "BTS — all black everything", tilt: 6 },
-  { src: lewis.url, caption: "still him", tilt: 6 },
-  { src: bmwBike.url, caption: "two helmets, one road", tilt: -5 },
-  { src: lewisNeymar.url, caption: "two worlds, one frame", tilt: 4 },
-  { src: sasha1.url, caption: "one more bite", tilt: -7 },
-  { src: yamal1.url, caption: "¡vamos!", tilt: 5 },
+  { src: lewis, caption: "still him", tilt: 6 },
+  { src: bmwBike, caption: "two helmets, one road", tilt: -5 },
+  { src: lewisNeymar, caption: "two worlds, one frame", tilt: 4 },
+  { src: sasha1, caption: "one more bite", tilt: -7 },
+  { src: yamal1, caption: "¡vamos!", tilt: 5 },
 ];
 
 function Column({
