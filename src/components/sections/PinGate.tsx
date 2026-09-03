@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 /** EDITABLE: swap this for whichever person photo you want behind the gate. */
-import personImage from "@/assets/sasha.jpg.asset.json";
+import personImage from "@/assets/sasha.jpg";
 
 /** EDITABLE: the unlock PIN. */
 const PIN = "0704";
@@ -37,7 +37,7 @@ export function PinGate({ onUnlock }: { onUnlock: () => void }) {
         className="absolute inset-0"
       >
         <img
-          src={personImage.url}
+          src={personImage}
           alt="A portrait of Aishu behind the birthday gate"
           className="h-full w-full object-cover"
         />

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 /** EDITABLE: hero background photo. */
-import heroImage from "@/assets/jimin.jpg.asset.json";
+import heroImage from "@/assets/jimin.jpg";
 import { WORLDS } from "@/lib/reduced-motion";
 
 export function Hero() {
@@ -8,7 +8,7 @@ export function Hero() {
     <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden nebula-bg">
       <div className="absolute inset-0">
         <img
-          src={heroImage.url}
+          src={heroImage}
           alt="Birthday hero portrait"
           className="h-full w-full object-cover"
         />
