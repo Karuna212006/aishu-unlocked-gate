@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Hero } from "@/components/sections/Hero";
 import { PhotoWallSection } from "@/components/sections/PhotoWallSection";
 import { SongSection } from "@/components/sections/SongSection";
-import { GallerySection } from "@/components/sections/GallerySection";
 import { CakeSection } from "@/components/sections/CakeSection";
 import { LetterSection } from "@/components/sections/LetterSection";
 import { WorldCards } from "@/components/sections/WorldCards";
@@ -15,13 +14,13 @@ export const Route = createFileRoute("/card")({
   ssr: false,
   head: () => ({
     meta: [
-      { title: "Happy Birthday Aishu — Inside the Gate" },
+      { title: "Happy Birthday Aishu " },
       {
         name: "description",
         content:
           "Six glowing fandom worlds, a cake to cut, a candle to blow out, and a handwritten letter for Aishu.",
       },
-      { property: "og:title", content: "Happy Birthday Aishu — Inside the Gate" },
+      { property: "og:title", content: "Happy Birthday Aishu" },
       {
         property: "og:description",
         content: "Photos, a song, a cake, a wish and a letter — all for Aishu.",
@@ -48,7 +47,6 @@ function CardPage() {
           <Hero />
           <PhotoWallSection />
           <SongSection />
-          <GallerySection />
           <CakeSection />
           <LetterSection />
           <WorldCards />

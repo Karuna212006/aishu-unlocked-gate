@@ -13,6 +13,7 @@ import lewisNeymar from "@/assets/lewis_x_neymar.jpg.asset.json";
 import lewis from "@/assets/lewis.jpg.asset.json";
 
 const LEFT = [
+  { src: "/bts_formal.jpg", caption: "BTS — suited & stunning", tilt: -5 },
   { src: messi.url, caption: "the goat", tilt: -6 },
   { src: levi.url, caption: "clean freak", tilt: 5 },
   { src: bmwCouple.url, caption: "someday, this drive", tilt: -4 },
@@ -21,6 +22,7 @@ const LEFT = [
 ];
 
 const RIGHT = [
+  { src: "/bts_dark.jpg", caption: "BTS — all black everything", tilt: 6 },
   { src: lewis.url, caption: "still him", tilt: 6 },
   { src: bmwBike.url, caption: "two helmets, one road", tilt: -5 },
   { src: lewisNeymar.url, caption: "two worlds, one frame", tilt: 4 },

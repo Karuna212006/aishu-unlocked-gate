@@ -42,40 +42,61 @@
 
 :root {
   --radius: 0.9rem;
-  --background: oklch(0.17 0.055 275);
-  --foreground: oklch(0.95 0.015 280);
-  --card: oklch(0.22 0.06 278 / 60%);
-  --card-foreground: oklch(0.95 0.015 280);
-  --popover: oklch(0.2 0.06 278);
-  --popover-foreground: oklch(0.95 0.015 280);
-  --primary: oklch(0.82 0.16 85);
-  --primary-foreground: oklch(0.18 0.05 275);
-  --secondary: oklch(0.3 0.08 285);
-  --secondary-foreground: oklch(0.95 0.015 280);
-  --muted: oklch(0.28 0.05 280);
-  --muted-foreground: oklch(0.75 0.03 280);
-  --accent: oklch(0.7 0.19 330);
-  --accent-foreground: oklch(0.15 0.04 275);
+
+  /* ── Deep midnight blue background (#0a0a2e) ── */
+  --background: oklch(0.12 0.065 265);
+  --foreground: oklch(0.96 0.012 250);
+
+  /* ── Cards: dark navy glass ── */
+  --card: oklch(0.17 0.07 263 / 60%);
+  --card-foreground: oklch(0.96 0.012 250);
+  --popover: oklch(0.15 0.065 263);
+  --popover-foreground: oklch(0.96 0.012 250);
+
+  /* ── Primary: electric cobalt blue ── */
+  --primary: oklch(0.65 0.22 255);
+  --primary-foreground: oklch(0.98 0.005 250);
+
+  /* ── Secondary: deep nebula navy ── */
+  --secondary: oklch(0.22 0.07 258);
+  --secondary-foreground: oklch(0.96 0.012 250);
+
+  /* ── Muted: dark blue-grey ── */
+  --muted: oklch(0.2 0.04 255);
+  --muted-foreground: oklch(0.72 0.03 255);
+
+  /* ── Accent: vivid nebula purple-pink ── */
+  --accent: oklch(0.62 0.24 305);
+  --accent-foreground: oklch(0.98 0.005 250);
+
   --destructive: oklch(0.62 0.22 20);
-  --destructive-foreground: oklch(0.97 0.01 280);
-  --border: oklch(0.95 0.02 280 / 14%);
-  --input: oklch(0.95 0.02 280 / 18%);
-  --ring: oklch(0.82 0.16 85);
+  --destructive-foreground: oklch(0.97 0.01 250);
 
-  --gold: oklch(0.85 0.15 88);
-  --rose: oklch(0.72 0.18 15);
-  --aqua: oklch(0.82 0.13 195);
-  --violet: oklch(0.68 0.2 300);
-  --ember: oklch(0.72 0.2 45);
+  --border: oklch(0.6 0.12 255 / 16%);
+  --input: oklch(0.6 0.1 255 / 18%);
+  --ring: oklch(0.65 0.22 255);
 
+  /* ── Named palette tokens ── */
+  /* gold  → bright sky blue */
+  --gold: oklch(0.72 0.2 240);
+  /* rose  → blue flame / neon cyan-blue */
+  --rose: oklch(0.68 0.22 220);
+  /* aqua  → bright electric blue */
+  --aqua: oklch(0.7 0.24 255);
+  /* violet → nebula purple */
+  --violet: oklch(0.55 0.26 305);
+  /* ember → deep cobalt */
+  --ember: oklch(0.48 0.22 268);
+
+  /* ── Nebula background gradient ── */
   --gradient-nebula: radial-gradient(
       1200px 800px at 15% 10%,
-      color-mix(in oklab, var(--violet) 28%, transparent),
+      color-mix(in oklab, var(--violet) 30%, transparent),
       transparent 60%
     ),
     radial-gradient(
       1000px 700px at 85% 30%,
-      color-mix(in oklab, var(--aqua) 20%, transparent),
+      color-mix(in oklab, var(--aqua) 22%, transparent),
       transparent 60%
     ),
     radial-gradient(
@@ -83,7 +104,8 @@
       color-mix(in oklab, var(--rose) 18%, transparent),
       transparent 65%
     );
-  --shadow-glow: 0 0 40px -8px color-mix(in oklab, var(--gold) 55%, transparent);
+
+  --shadow-glow: 0 0 40px -8px color-mix(in oklab, var(--aqua) 60%, transparent);
   --shadow-portal: 0 0 80px -10px color-mix(in oklab, var(--violet) 70%, transparent);
 }
 
@@ -117,7 +139,8 @@
 }
 
 @utility text-glow {
-  text-shadow: 0 0 24px color-mix(in oklab, var(--gold) 55%, transparent);
+  text-shadow: 0 0 24px color-mix(in oklab, var(--aqua) 65%, transparent),
+               0 0 48px color-mix(in oklab, var(--violet) 35%, transparent);
 }
 
 @keyframes nebula-drift {

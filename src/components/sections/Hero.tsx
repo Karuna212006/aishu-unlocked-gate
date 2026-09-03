@@ -18,14 +18,6 @@ export function Hero() {
 
 
       <div className="relative z-10 px-6 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="font-script text-2xl text-primary"
-        >
-          the gate is open…
-        </motion.p>
         <motion.h1
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
